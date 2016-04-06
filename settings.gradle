@@ -1,1 +1,1 @@
-include ':studyjams:app', ':mystudy:WalkudApp'
+include ':studyjams:app', ':mystudy:WalkudApp', ':mystudy:WalkudJava'
