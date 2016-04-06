@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.walkud.jam.R;
 import com.walkud.jam.module.buildlayout.BuildLayoutActivity;
+import com.walkud.jam.module.makeapp.MakeAppActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,6 +19,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Bind(R.id.buttonLayoutBtn)
     Button buttonLayoutBtn;
+    @Bind(R.id.makeAppBtn)
+    Button makeAppBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ButterKnife.bind(this);
 
         buttonLayoutBtn.setOnClickListener(this);
+        makeAppBtn.setOnClickListener(this);
     }
 
     @Override
@@ -36,6 +40,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (id) {
             case R.id.buttonLayoutBtn:
                 toIntent(BuildLayoutActivity.class);
+                break;
+            case R.id.makeAppBtn:
+                toIntent(MakeAppActivity.class);
                 break;
         }
 

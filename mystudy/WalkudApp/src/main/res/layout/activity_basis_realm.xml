@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/insertData"
+            style="@style/MainButton"
+            android:text="插入数据" />
+
+        <Button
+            android:id="@+id/modifyData"
+            style="@style/MainButton"
+            android:text="修改数据" />
+
+        <Button
+            android:id="@+id/deleteData"
+            style="@style/MainButton"
+            android:text="删除数据" />
+
+        <Button
+            android:id="@+id/queryData"
+            style="@style/MainButton"
+            android:text="查询数据" />
+
+        <com.walkud.self.view.ListViewForScrollView
+            android:id="@+id/basisRealmLV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</ScrollView>
