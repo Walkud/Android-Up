@@ -64,7 +64,7 @@ public class MExposeAnnotation {
          */
         @Override
         public boolean shouldSkipClass(Class<?> clazz) {
-            return false;
+            return Integer.class == clazz;
         }
     }
 
@@ -79,7 +79,7 @@ public class MExposeAnnotation {
         public String name;//姓名
         public int age;//年龄
         public String sex;//性别
-        public int height;//身高
+        public Integer height;//身高
         public float weight;//体重
         @MyExclus
         public boolean isLogin;//是否登录

@@ -14,7 +14,7 @@ public class ExposeAnnotation {
     public static void main(String[] args) {
 
         Gson gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()//排除没有Expose注解字段
+                .excludeFieldsWithoutExposeAnnotation()//只序列化和反序列化带Expose注解属性
                 .create();
 
         ExposeUser eu = new ExposeUser();
