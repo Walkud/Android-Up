@@ -7,8 +7,8 @@ import android.widget.Button;
 
 import com.walkud.jam.R;
 import com.walkud.jam.module.BaseActivity;
-import com.walkud.jam.module.buildlayout.b.LinearLayoutActivity;
 import com.walkud.jam.module.makeapp.a.BuyGoodsActivity;
+import com.walkud.jam.module.makeapp.p2.BasketBallActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,6 +21,8 @@ public class MakeAppActivity extends BaseActivity implements View.OnClickListene
 
     @Bind(R.id.buyGoodsBtn)
     Button buyGoodsBtn;
+    @Bind(R.id.basketBallBtn)
+    Button BasketBallBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class MakeAppActivity extends BaseActivity implements View.OnClickListene
         ButterKnife.bind(this);
 
         buyGoodsBtn.setOnClickListener(this);
+        BasketBallBtn.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +42,9 @@ public class MakeAppActivity extends BaseActivity implements View.OnClickListene
         switch (id) {
             case R.id.buyGoodsBtn:
                 toIntent(BuyGoodsActivity.class);
+                break;
+            case R.id.basketBallBtn:
+                toIntent(BasketBallActivity.class);
                 break;
         }
     }

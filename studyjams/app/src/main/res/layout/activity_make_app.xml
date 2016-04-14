@@ -10,5 +10,10 @@
         style="@style/MainButton"
         android:text="BuyGoods" />
 
+    <Button
+        android:id="@+id/basketBallBtn"
+        style="@style/MainButton"
+        android:text="BasketBall" />
+
 
 </LinearLayout>

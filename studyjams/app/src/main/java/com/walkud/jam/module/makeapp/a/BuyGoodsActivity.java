@@ -25,10 +25,13 @@ public class BuyGoodsActivity extends BaseActivity implements View.OnClickListen
     Button minusBtn;
     @Bind(R.id.priceTV)
     TextView priceTV;
+    @Bind(R.id.thinkyouTV)
+    TextView thinkyouTV;
     @Bind(R.id.orderBtn)
     Button orderBtn;
 
     private static final int UNIT_PRICE = 399;//单价
+
     private int quantity = 0;//数量
 
     @Override
@@ -59,6 +62,7 @@ public class BuyGoodsActivity extends BaseActivity implements View.OnClickListen
                 priceTV.setText("￥" + 0);
                 break;
             case R.id.orderBtn://下单
+                thinkyouTV.setText("ThinkYou!");
                 priceTV.setText("￥" + quantity * UNIT_PRICE);
                 break;
         }

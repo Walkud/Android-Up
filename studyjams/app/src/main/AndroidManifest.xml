@@ -32,6 +32,9 @@
         <activity
             android:name=".module.makeapp.a.BuyGoodsActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.makeapp.p2.BasketBallActivity"
+            android:screenOrientation="portrait" />
 
 
     </application>
