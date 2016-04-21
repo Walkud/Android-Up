@@ -1,96 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/img_football" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="世界杯 adidas 足球 单价 ￥399"
-        android:textAllCaps="true"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="monospace"
-        android:text="Quantity"
-        android:textAllCaps="true"
-        android:textSize="16sp" />
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <Button
-            android:id="@+id/plusBtn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginRight="16dp"
-            android:text="+" />
-
-        <TextView
-            android:id="@+id/quantityTV"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
+            android:src="@mipmap/img_football" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="世界杯 adidas 足球 单价 ￥399"
+            android:textAllCaps="true"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="monospace"
+            android:text="Quantity"
+            android:textAllCaps="true"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/plusBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="16dp"
+                android:text="+" />
+
+            <TextView
+                android:id="@+id/quantityTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="0"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/minusBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="-" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="monospace"
+            android:text="You like the brand"
+            android:textAllCaps="true"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <CheckBox
+                android:id="@+id/adidasCB"
+                style="@style/goodCB"
+                android:text="adidas" />
+
+            <CheckBox
+                android:id="@+id/nikeCB"
+                style="@style/goodCB"
+                android:text="Nike" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="monospace"
+            android:text="Price"
+            android:textAllCaps="true"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/priceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="0"
+            android:text="￥0"
             android:textAllCaps="true"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/thinkyouTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
         <Button
-            android:id="@+id/minusBtn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:text="-" />
+            android:id="@+id/orderBtn"
+            style="@style/MainButton"
+            android:text="order" />
+
+        <TextView
+            android:id="@+id/feedbackTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="monospace"
+            android:text="Feedback email to me"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/feedbackET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请填写您的评价"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/emailToBtn"
+            style="@style/MainButton"
+            android:text="EmailTo" />
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="monospace"
-        android:text="Price"
-        android:textAllCaps="true"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/priceTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="￥0"
-        android:textAllCaps="true"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/thinkyouTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
-
-    <Button
-        android:id="@+id/orderBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="order"
-        android:textAllCaps="true"
-        android:textSize="16sp" />
-
-</LinearLayout>
+</ScrollView>

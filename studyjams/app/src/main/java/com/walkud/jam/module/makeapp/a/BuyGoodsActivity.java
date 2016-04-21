@@ -1,10 +1,15 @@
 package com.walkud.jam.module.makeapp.a;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.walkud.jam.R;
 import com.walkud.jam.module.BaseActivity;
@@ -29,8 +34,19 @@ public class BuyGoodsActivity extends BaseActivity implements View.OnClickListen
     TextView thinkyouTV;
     @Bind(R.id.orderBtn)
     Button orderBtn;
+    @Bind(R.id.adidasCB)
+    CheckBox adidasCB;
+    @Bind(R.id.nikeCB)
+    CheckBox nikeCB;
+    @Bind(R.id.feedbackTV)
+    TextView feedbackTV;
+    @Bind(R.id.feedbackET)
+    EditText feedbackET;
+    @Bind(R.id.emailToBtn)
+    Button emailToBtn;
 
     private static final int UNIT_PRICE = 399;//单价
+
 
     private int quantity = 0;//数量
 
@@ -44,7 +60,7 @@ public class BuyGoodsActivity extends BaseActivity implements View.OnClickListen
         plusBtn.setOnClickListener(this);
         minusBtn.setOnClickListener(this);
         orderBtn.setOnClickListener(this);
-
+        emailToBtn.setOnClickListener(this);
     }
 
     @Override
@@ -55,17 +71,63 @@ public class BuyGoodsActivity extends BaseActivity implements View.OnClickListen
                 quantity++;
                 quantityTV.setText(String.valueOf(quantity));
                 priceTV.setText("￥" + 0);
+                feedbackTV.setVisibility(View.GONE);
+                feedbackET.setVisibility(View.GONE);
                 break;
             case R.id.minusBtn://减
                 quantity--;
                 quantityTV.setText(String.valueOf(quantity));
                 priceTV.setText("￥" + 0);
+                feedbackTV.setVisibility(View.GONE);
+                feedbackET.setVisibility(View.GONE);
                 break;
             case R.id.orderBtn://下单
-                thinkyouTV.setText("ThinkYou!");
-                priceTV.setText("￥" + quantity * UNIT_PRICE);
+                if (quantity == 0) {
+                    Toast.makeText(this, "请先选择数量!", Toast.LENGTH_LONG).show();
+                } else {
+
+                    StringBuilder sb = new StringBuilder("ThinkYou!\n");
+                    if (adidasCB.isChecked()) {
+                        sb.append("喜欢adidas品牌\n");
+                    }
+                    if (nikeCB.isChecked()) {
+                        sb.append("喜欢Nike品牌\n");
+                    }
+
+                    thinkyouTV.setText(sb.toString());
+                    priceTV.setText("￥" + quantity * UNIT_PRICE);
+
+                    feedbackTV.setVisibility(View.VISIBLE);
+                    feedbackET.setVisibility(View.VISIBLE);
+                }
+
+                break;
+            case R.id.emailToBtn:
+
+                if (feedbackET.getVisibility() == View.GONE) {
+                    Toast.makeText(this, "请先购买!", Toast.LENGTH_LONG).show();
+                } else {
+
+                    String msg = feedbackET.getText().toString();
+
+                    emailTo("football", msg);
+                }
                 break;
         }
 
+    }
+
+    /**
+     * 发送邮件
+     *
+     * @param name
+     * @param priceMsg
+     */
+    private void emailTo(String name, String priceMsg) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:Walkud@gmail.com"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Buy goods " + name);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMsg);
+        startActivity(intent);
     }
 }

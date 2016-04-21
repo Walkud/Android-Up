@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.walkud.self.R;
 import com.walkud.self.module.sqllite.realm.RealmMainActivity;
+import com.walkud.self.module.survive.SurviveActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -14,6 +15,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Bind(R.id.realmMainBtn)
     Button realmMainBtn;
+    @Bind(R.id.surviveBtn)
+    Button surviveBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ButterKnife.bind(this);
 
         realmMainBtn.setOnClickListener(this);
+        surviveBtn.setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +35,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (id) {
             case R.id.realmMainBtn:
                 toIntent(RealmMainActivity.class);
+                break;
+            case R.id.surviveBtn:
+                toIntent(SurviveActivity.class);
                 break;
         }
     }

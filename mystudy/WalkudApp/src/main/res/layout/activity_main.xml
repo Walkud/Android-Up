@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="5dp"
     tools:context=".module.MainActivity">
 
@@ -10,4 +11,10 @@
         android:id="@+id/realmMainBtn"
         style="@style/MainButton"
         android:text="RealmMain" />
+
+    <Button
+        android:id="@+id/surviveBtn"
+        style="@style/MainButton"
+        android:text="ProgressSurvive" />
+
 </LinearLayout>

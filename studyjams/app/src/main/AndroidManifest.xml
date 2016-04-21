@@ -36,6 +36,9 @@
             android:name=".module.makeapp.p2.BasketBallActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".module.makeapp.a.ObjectActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

@@ -6,7 +6,7 @@ android {
     buildToolsVersion "24.0.0 rc1"
 
     defaultConfig {
-        applicationId "android_up.walkudapp"
+        applicationId "com.walkud.self"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1

@@ -22,10 +22,52 @@
         <activity
             android:name=".module.sqllite.realm.RealmMainActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".module.sqllite.realm.BasisRealmActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.survive.SurviveActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".module.survive.receiver.WakeReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.wake.gray" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".module.survive.service.WhiteService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":white" />
+        <service
+            android:name=".module.survive.service.GrayService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":gray" />
+        <service
+            android:name=".module.survive.service.GrayService$GrayInnerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":gray" />
+        <service
+            android:name=".module.survive.service.BackgroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":bg" />
+        <service
+            android:name=".module.survive.receiver.WakeReceiver$WakeNotifyService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".module.survive.service.RestartService"
+            android:enabled="true"
+            android:process="com.walud.self.restart" />
     </application>
 
 </manifest>
