@@ -11,8 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.clock.daemon.BinderPool;
+import com.clock.daemon.GrayServiceHelper;
 import com.walkud.self.R;
 import com.walkud.self.module.survive.service.BackgroundService;
 import com.walkud.self.module.survive.service.GrayService;
@@ -37,8 +40,13 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
     Button btnBlack;
     @Bind(R.id.btn_background_service)
     Button btnBackgroundService;
+    @Bind(R.id.setpText)
+    TextView setpText;
+    @Bind(R.id.btn_step)
+    Button btnStep;
 
     private BinderPool mBinderPool = null;
+    private GrayServiceHelper mGrayServiceHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,7 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_survive);
         ButterKnife.bind(this);
 
+        btnStep.setOnClickListener(this);
         btnWhite.setOnClickListener(this);
         btnGray.setOnClickListener(this);
         btnBlack.setOnClickListener(this);
@@ -56,7 +65,15 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         int viewId = v.getId();
-        if (viewId == R.id.btn_white) { //系统正常的前台Service，白色保活手段
+        if (viewId == R.id.btn_step) {//获取Step
+            if (mGrayServiceHelper != null) {
+                try {
+                    setpText.setText("" + mGrayServiceHelper.getSetp());
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else if (viewId == R.id.btn_white) { //系统正常的前台Service，白色保活手段
             Intent whiteIntent = new Intent(this, WhiteService.class);
             startService(whiteIntent);
 
@@ -87,6 +104,8 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
             Log.i(TAG, "GrayService->onServiceConnected");
             mBinderPool = BinderPool.Stub.asInterface(service);
             try {
+                IBinder bpService = mBinderPool.getBinderHelper(GrayService.GRAY_BINDER_CODE);
+                mGrayServiceHelper = GrayServiceHelper.Stub.asInterface(bpService);
                 service.linkToDeath(mGrayBinderDeathRecipient, 0);
             } catch (RemoteException e) {
                 e.printStackTrace();
@@ -105,8 +124,19 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
     private IBinder.DeathRecipient mGrayBinderDeathRecipient = new IBinder.DeathRecipient() {
         @Override
         public void binderDied() { //进程死亡或者Binder键发生断裂会产生回调
+            Toast.makeText(SurviveActivity.this, "binderDied", Toast.LENGTH_LONG).show();
+            Intent grayIntent = new Intent();
+            grayIntent.setAction("com.walkud.GrayService");
+            startService(grayIntent);
             Log.e(TAG, "Gray ->binderDied");
+
         }
     };
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(mGrayServiceConnection);
+
+    }
 }

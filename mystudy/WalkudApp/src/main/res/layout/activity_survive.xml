@@ -5,6 +5,19 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+
+    <TextView
+        android:id="@+id/setpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_step"
+        style="@style/MainButton"
+        android:text="获取Step" />
+
     <Button
         android:id="@+id/btn_white"
         style="@style/MainButton"

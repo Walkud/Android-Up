@@ -13,4 +13,6 @@ interface GrayServiceHelper {
      * @param something
      */
     void say(String something);
+
+    int getSetp();
 }

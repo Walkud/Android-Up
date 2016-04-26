@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <LinearLayout
+                style="@style/CardLayout"
+                android:layout_marginRight="8dp">
+
+                <TextView
+                    style="@style/CardHeadText"
+                    android:text="@string/bushou" />
+
+                <View style="@style/SliptView" />
+
+                <TextView
+                    android:id="@+id/bushouTV"
+                    style="@style/CardContentText" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/CardLayout"
+                android:layout_marginLeft="8dp">
+
+                <TextView
+                    style="@style/CardHeadText"
+                    android:text="@string/head" />
+
+                <View style="@style/SliptView" />
+
+                <TextView
+                    android:id="@+id/headTV"
+                    style="@style/CardContentText" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/pinyin" />
+
+        <TextView
+            android:id="@+id/pinyinTV"
+            style="@style/CardView" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/chengyujs" />
+
+        <TextView
+            android:id="@+id/chengyujsTV"
+            style="@style/CardView" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/from_" />
+
+        <TextView
+            android:id="@+id/from_TV"
+            style="@style/CardView" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/example" />
+
+        <TextView
+            android:id="@+id/exampleTV"
+            style="@style/CardView" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/yufa" />
+
+        <TextView
+            android:id="@+id/yufaTV"
+            style="@style/CardView" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/ciyujs" />
+
+        <TextView
+            android:id="@+id/ciyujsTV"
+            style="@style/CardView" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/yinzhengjs" />
+
+        <TextView
+            android:id="@+id/yinzhengjsTV"
+            style="@style/CardView" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/tongyi" />
+
+        <cn.studyjams.s1.sj10.zhuliya.view.ScrollGridView
+            android:id="@+id/tongyiGV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="16dp"
+            android:numColumns="3"
+            android:verticalSpacing="16dp" />
+
+        <TextView
+            style="@style/CardTitleView"
+            android:text="@string/fanyi" />
+
+        <cn.studyjams.s1.sj10.zhuliya.view.ScrollGridView
+            android:id="@+id/fanyiGV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="16dp"
+            android:numColumns="3"
+            android:verticalSpacing="16dp" />
+
+    </LinearLayout>
+</ScrollView>

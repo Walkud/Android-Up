@@ -88,7 +88,9 @@ public class BasisRealmActivity extends BaseActivity implements View.OnClickList
         user.setAge(r.nextInt(99));
         user.setDate(new Date(System.currentTimeMillis()));
         //保存数据
-        RealmUtil.insertByTransaction(user);
+        realm.beginTransaction();
+        realm.copyToRealm(user);
+        realm.commitTransaction();
     }
 
     /**

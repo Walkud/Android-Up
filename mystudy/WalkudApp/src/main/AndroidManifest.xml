@@ -48,7 +48,12 @@
             android:name=".module.survive.service.GrayService"
             android:enabled="true"
             android:exported="false"
-            android:process=":gray" />
+            android:process=":gray">
+            <intent-filter>
+                <action android:name="com.walkud.GrayService" />
+            </intent-filter>
+
+        </service>
         <service
             android:name=".module.survive.service.GrayService$GrayInnerService"
             android:enabled="true"

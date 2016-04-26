@@ -1,4 +1,4 @@
-package com.walkud.self.utils;
+package cn.studyjams.s1.sj10.zhuliya.utils;
 
 import android.content.Context;
 
@@ -21,7 +21,7 @@ public class RealmUtil {
 //        byte[] key = new byte[64];
 //        new SecureRandom().nextBytes(key);//设置加密Key
         return new RealmConfiguration.Builder(context)
-                .name("my_walkud.realm")
+                .name("sj10.realm")
 //                .encryptionKey(key)
 //                .setModules(new MySchemaModule())//未知
 //                .migration(new MyMigration())//迁移

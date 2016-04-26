@@ -9,10 +9,13 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.clock.daemon.BinderPool;
 import com.clock.daemon.GrayServiceHelper;
+import com.walkud.self.R;
+import com.walkud.self.module.MainActivity;
 import com.walkud.self.module.survive.receiver.WakeReceiver;
 
 import java.util.Timer;
@@ -36,7 +39,7 @@ public class GrayService extends Service {
     private final static int ALARM_INTERVAL = 20 * 1000;
     private final static int WAKE_REQUEST_CODE = 6666;
 
-    private final static int GRAY_SERVICE_ID = 1001;
+    public final static int GRAY_SERVICE_ID = -10010;
 
     private IBinder mBinderPool = new BinderPool.Stub() {
         @Override
@@ -52,10 +55,17 @@ public class GrayService extends Service {
     private Timer timer = new Timer();
     private int count = 0;
 
+    private static int setp = 0;
+
     private IBinder mGrayServiceHelper = new GrayServiceHelper.Stub() {
         @Override
         public void say(String something) throws RemoteException {
             Log.i(TAG, "GrayService say: " + something);
+        }
+
+        @Override
+        public int getSetp() throws RemoteException {
+            return setp;
         }
     };
 
@@ -73,35 +83,35 @@ public class GrayService extends Service {
         } else {
             Intent innerIntent = new Intent(this, GrayInnerService.class);
             startService(innerIntent);
-            startForeground(GRAY_SERVICE_ID, new Notification());
+            startForeground(GRAY_SERVICE_ID, getNoti(this));
         }
 
         //发送唤醒广播来促使挂掉的UI进程重新启动起来
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent alarmIntent = new Intent();
-        alarmIntent.setAction(WakeReceiver.GRAY_WAKE_ACTION);
-        alarmIntent.putExtra("Flag", "AlarmManager");
-        PendingIntent operation = PendingIntent.getBroadcast(this, WAKE_REQUEST_CODE, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), ALARM_INTERVAL, operation);
+//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//        Intent alarmIntent = new Intent();
+//        alarmIntent.setAction(WakeReceiver.GRAY_WAKE_ACTION);
+//        alarmIntent.putExtra("Flag", "AlarmManager");
+//        PendingIntent operation = PendingIntent.getBroadcast(this, WAKE_REQUEST_CODE, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), ALARM_INTERVAL, operation);
 
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Log.d(TAG, "进程保活触发 count:" + count);
-                Intent wakeIntent = new Intent();
-                wakeIntent.putExtra("Flag", "Timer");
-                wakeIntent.setAction(WakeReceiver.GRAY_WAKE_ACTION);
-                sendBroadcast(wakeIntent);
-
-                if (count++ >= 5) {
-                    count = 0;
-                    Intent i = new Intent(GrayService.this, RestartService.class);
-                    i.putExtra("Pid", android.os.Process.myPid());
-                    startService(i);
-                }
+                setp++;
+                Log.d(TAG, "进程保活触发 count:" + count + ",setp:" + setp);
+//                Intent wakeIntent = new Intent();
+//                wakeIntent.putExtra("Flag", "Timer");
+//                wakeIntent.setAction(WakeReceiver.GRAY_WAKE_ACTION);
+//                sendBroadcast(wakeIntent);
+//                if (count++ >= 5) {
+//                    count = 0;
+//                    Intent i = new Intent(GrayService.this, RestartService.class);
+//                    i.putExtra("Pid", android.os.Process.myPid());
+//                    startService(i);
+//                }
 
             }
-        }, 5000, 20000);
+        }, 3000, 3000);
 
         return super.onStartCommand(intent, flags, startId);
     }
@@ -131,7 +141,7 @@ public class GrayService extends Service {
         @Override
         public int onStartCommand(Intent intent, int flags, int startId) {
             Log.i(TAG, "InnerService -> onStartCommand");
-            startForeground(GRAY_SERVICE_ID, new Notification());
+            startForeground(GRAY_SERVICE_ID, getNoti(this));
             stopForeground(true);
             stopSelf();
             return super.onStartCommand(intent, flags, startId);
@@ -148,5 +158,15 @@ public class GrayService extends Service {
             Log.i(TAG, "InnerService -> onDestroy");
             super.onDestroy();
         }
+    }
+
+    private static Notification getNoti(Context context) {
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
+                context).setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("Survive Title")
+                .setContentText("Survive ContentText");
+        mBuilder.setTicker("Survive Ticker");//第一次提示消息的时候显示在通知栏上
+        mBuilder.setNumber(12);
+        return mBuilder.build();
     }
 }
