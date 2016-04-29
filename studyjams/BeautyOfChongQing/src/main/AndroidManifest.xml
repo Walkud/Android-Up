@@ -18,7 +18,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailedActivity"
+            android:name=".IntroductionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".HistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".TrafficActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".TourismActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EconomicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SceneryActivity"
             android:screenOrientation="portrait" />
     </application>
 

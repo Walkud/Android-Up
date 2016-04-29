@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TitleText"
+            android:text="解放碑" />
+
+        <ImageView
+            style="@style/ImageStyle"
+            android:src="@mipmap/img_jiefangbei" />
+
+        <TextView
+            style="@style/TitleText"
+            android:text="洪崖洞" />
+
+        <ImageView
+            style="@style/ImageStyle"
+            android:src="@mipmap/img_hongyadong" />
+
+        <TextView
+            style="@style/TitleText"
+            android:text="人民大礼堂" />
+
+        <ImageView
+            style="@style/ImageStyle"
+            android:src="@mipmap/img_renmindalitang" />
+
+        <TextView
+            style="@style/TitleText"
+            android:text="磁器口古镇" />
+
+        <ImageView
+            style="@style/ImageStyle"
+            android:src="@mipmap/img_ciqikouguzhen" />
+
+        <TextView
+            style="@style/TitleText"
+            android:text="大足石刻" />
+
+        <ImageView
+            style="@style/ImageStyle"
+            android:src="@mipmap/img_dazushike" />
+
+    </LinearLayout>
+</ScrollView>

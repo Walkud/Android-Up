@@ -13,6 +13,11 @@
         android:text="RealmMain" />
 
     <Button
+        android:id="@+id/stethoBtn"
+        style="@style/MainButton"
+        android:text="Stetho" />
+
+    <Button
         android:id="@+id/surviveBtn"
         style="@style/MainButton"
         android:text="ProgressSurvive" />

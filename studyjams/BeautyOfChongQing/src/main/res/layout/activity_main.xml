@@ -12,37 +12,28 @@
         android:scaleType="fitXY"
         android:src="@mipmap/img_main_top" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="6dp"
-        android:text="旅游胜地" />
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:paddingLeft="6dp"
         android:paddingRight="6dp">
 
         <Button
-            android:id="@+id/jieFangBeiBtn"
-            style="@style/CardBtn"
-            android:text="解放碑" />
+            android:id="@+id/introductionBtn"
+            style="@style/MainBtn"
+            android:text="简介" />
 
         <Button
-            android:id="@+id/renMinDaLiTangBtn"
-            style="@style/CardBtn"
-            android:text="人民大礼堂" />
+            android:id="@+id/historyBtn"
+            style="@style/MainBtn"
+            android:text="历史文化" />
 
         <Button
-            android:id="@+id/hongYaDongBtn"
-            style="@style/CardBtn"
-            android:text="洪崖洞" />
+            android:id="@+id/trafficBtn"
+            style="@style/MainBtn"
+            android:text="交通" />
 
     </LinearLayout>
 
@@ -55,19 +46,19 @@
         android:paddingRight="6dp">
 
         <Button
-            android:id="@+id/ciQiKouGuZhenBtn"
-            style="@style/CardBtn"
-            android:text="磁器口古镇" />
+            android:id="@+id/tourismBtn"
+            style="@style/MainBtn"
+            android:text="旅游资源" />
 
         <Button
-            android:id="@+id/jinFoShanBtn"
-            style="@style/CardBtn"
-            android:text="金佛山" />
+            android:id="@+id/economicBtn"
+            style="@style/MainBtn"
+            android:text="经济" />
 
         <Button
-            android:id="@+id/daZuShiKeBtn"
-            style="@style/CardBtn"
-            android:text="大足石刻" />
+            android:id="@+id/sceneryBtn"
+            style="@style/MainBtn"
+            android:text="风景图" />
 
     </LinearLayout>
 

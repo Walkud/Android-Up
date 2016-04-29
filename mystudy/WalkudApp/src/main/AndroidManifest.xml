@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.walkud.self">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -28,6 +30,13 @@
 
         <activity
             android:name=".module.survive.SurviveActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.stetho.StethoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.stetho.db.SdkDbActivity"
             android:screenOrientation="portrait" />
 
         <receiver

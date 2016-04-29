@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/MainButton"
+        android:text="更新" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/MainButton"
+        android:text="删除" />
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/MainButton"
+        android:text="查询" />
+
+    <ListView
+        android:id="@+id/list1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
