@@ -86,21 +86,6 @@ public class SdkDbActivity extends BaseActivity implements View.OnClickListener 
         Log.d(TAG, "onDestroy");
     }
 
-    int count = 0;
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && count == 0) {
-            Toast.makeText(getApplicationContext(), "点击返回键", Toast.LENGTH_LONG)
-                    .show();
-            count++;
-            return true;
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
-
     private void queryData() {
         Cursor cursor = db.select();
         ListAdapter adapter = new SimpleCursorAdapter(

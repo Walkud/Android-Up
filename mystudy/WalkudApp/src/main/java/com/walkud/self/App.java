@@ -3,9 +3,7 @@ package com.walkud.self;
 import android.app.Application;
 import android.util.Log;
 
-import com.facebook.stetho.DumperPluginsProvider;
 import com.facebook.stetho.Stetho;
-import com.facebook.stetho.dumpapp.DumperPlugin;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.walkud.self.utils.RealmUtil;
 
@@ -50,10 +48,12 @@ public class App extends Application {
      * 初始化Stetho调试工具
      */
     private void initStetho() {
-        Stetho.initializeWithDefaults(this);
-        mOkHttpClient = new OkHttpClient.Builder()
-                .addNetworkInterceptor(new StethoInterceptor())
-                .build();
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this);
+            builder.addNetworkInterceptor(new StethoInterceptor());
+        }
+        mOkHttpClient = builder.build();
     }
 
     public OkHttpClient getOkHttpClient() {
