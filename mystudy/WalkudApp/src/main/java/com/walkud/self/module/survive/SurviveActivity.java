@@ -116,8 +116,10 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
         @Override
         public void onServiceDisconnected(ComponentName name) { //进程死亡或者Binder键发生断裂会产生回调
             Log.e(TAG, "GrayService->onServiceDisconnected");
-            mBinderPool.asBinder().unlinkToDeath(mGrayBinderDeathRecipient, 0);
-            mBinderPool = null;
+            if (mBinderPool != null) {
+                mBinderPool.asBinder().unlinkToDeath(mGrayBinderDeathRecipient, 0);
+                mBinderPool = null;
+            }
         }
     };
 
@@ -136,7 +138,9 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbindService(mGrayServiceConnection);
+        if (mBinderPool != null) {
+            unbindService(mGrayServiceConnection);
+        }
 
     }
 }
