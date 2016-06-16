@@ -1,5 +1,5 @@
 ##Stetho
-Facebook开源工具Stetho让Chrome调试Android非常方便，无需Root使用查看数据库、SharedPreferences等数据
+Facebook开源库Stetho让Chrome调试Android非常方便，无需Root使用查看数据库、SharedPreferences等数据
 
 ###基本功能
 1. 网络抓包(Http)
