@@ -1,4 +1,4 @@
-package com.walkud;
+package com.example;
 
 public class Gson {
 }
