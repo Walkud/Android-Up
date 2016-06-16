@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.walkud.self">
 
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -48,6 +53,52 @@
             </intent-filter>
         </receiver>
 
+        <!-- ### Widget Begin -->
+
+        <!-- 指定广播接受者 -->
+        <receiver android:name=".module.widget.TimeWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider" /><!-- 指定provider -->
+        </receiver>
+
+        <!-- 指定时钟服务 -->
+        <service android:name=".module.widget.ClockService" />
+
+        <!-- DaemonReceiver 服务广播 -->
+        <receiver
+            android:name="com.opencdk.appwidget.widget.DaemonReceiver"
+            android:exported="true"
+            android:permission="com.opencdk.appwidget.permission.APP_WIDGET">
+            <intent-filter android:priority="0x6fffffff">
+
+                <action android:name="com.opencdk.appwidget.action.DAEMON_RECEIVER" />
+
+                <!-- 【必须】 系统广播：开屏和网络切换 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+                <!-- 【可选】 一些常用的系统广播，增强widget service的复活机会，请根据需要选择。当然，你也可以添加APP自定义的一些广播让启动service -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+            <!-- 【可选】 usb相关的系统广播，增强widget service的复活机会，请根据需要添加 -->
+            <intent-filter android:priority="0x6fffffff">
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+                <action android:name="android.intent.action.MEDIA_REMOVED" />
+                <action android:name="android.intent.action.MEDIA_CHECKING" />
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver>
+        <!-- ### Widget End -->
+
         <service
             android:name=".module.survive.service.WhiteService"
             android:enabled="true"
@@ -61,7 +112,6 @@
             <intent-filter>
                 <action android:name="com.walkud.GrayService" />
             </intent-filter>
-
         </service>
         <service
             android:name=".module.survive.service.GrayService$GrayInnerService"
