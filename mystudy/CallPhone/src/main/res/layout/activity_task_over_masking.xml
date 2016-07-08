@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#44000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/center_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/task_over_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我要接管" />
+
+        <Button
+            android:id="@+id/not_task_over_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="放弃接管" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/center_layout"
+        android:padding="15dp"
+        android:text="是否要使用xxx接管电话?"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>

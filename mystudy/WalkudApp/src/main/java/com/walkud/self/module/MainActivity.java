@@ -8,6 +8,7 @@ import com.walkud.self.R;
 import com.walkud.self.module.sqllite.realm.RealmMainActivity;
 import com.walkud.self.module.stetho.StethoActivity;
 import com.walkud.self.module.survive.SurviveActivity;
+import com.walkud.self.module.transparent.TransparentActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +21,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button surviveBtn;
     @Bind(R.id.stethoBtn)
     Button stethoBtn;
+    @Bind(R.id.transparentBtn)
+    Button transparentBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         realmMainBtn.setOnClickListener(this);
         surviveBtn.setOnClickListener(this);
         stethoBtn.setOnClickListener(this);
+        transparentBtn.setOnClickListener(this);
     }
 
     @Override
@@ -45,6 +49,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.stethoBtn:
                 toIntent(StethoActivity.class);
+                break;
+            case R.id.transparentBtn:
+                toIntent(TransparentActivity.class);
                 break;
         }
     }

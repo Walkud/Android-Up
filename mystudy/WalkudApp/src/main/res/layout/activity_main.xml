@@ -22,4 +22,9 @@
         style="@style/MainButton"
         android:text="ProgressSurvive" />
 
+    <Button
+        android:id="@+id/transparentBtn"
+        style="@style/MainButton"
+        android:text="TransparentActivity" />
+
 </LinearLayout>

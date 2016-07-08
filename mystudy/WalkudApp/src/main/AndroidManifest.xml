@@ -44,6 +44,12 @@
             android:name=".module.stetho.db.SdkDbActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".module.transparent.TransparentActivity"
+            android:theme="@style/FullDialogStyle"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
+
         <receiver
             android:name=".module.survive.receiver.WakeReceiver"
             android:enabled="true"
