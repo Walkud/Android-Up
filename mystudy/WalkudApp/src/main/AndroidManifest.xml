@@ -9,6 +9,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- 蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -46,8 +50,12 @@
 
         <activity
             android:name=".module.transparent.TransparentActivity"
-            android:theme="@style/FullDialogStyle"
             android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullDialogStyle" />
+
+        <activity
+            android:name=".module.bluetooth.BluetoothActivity"
             android:screenOrientation="portrait" />
 
         <receiver
@@ -57,28 +65,7 @@
             <intent-filter>
                 <action android:name="com.wake.gray" />
             </intent-filter>
-        </receiver>
 
-        <!-- ### Widget Begin -->
-
-        <!-- 指定广播接受者 -->
-        <receiver android:name=".module.widget.TimeWidgetProvider">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/appwidget_provider" /><!-- 指定provider -->
-        </receiver>
-
-        <!-- 指定时钟服务 -->
-        <service android:name=".module.widget.ClockService" />
-
-        <!-- DaemonReceiver 服务广播 -->
-        <receiver
-            android:name="com.opencdk.appwidget.widget.DaemonReceiver"
-            android:exported="true"
-            android:permission="com.opencdk.appwidget.permission.APP_WIDGET">
             <intent-filter android:priority="0x6fffffff">
 
                 <action android:name="com.opencdk.appwidget.action.DAEMON_RECEIVER" />
@@ -103,6 +90,22 @@
                 <data android:scheme="file" />
             </intent-filter>
         </receiver>
+
+        <!-- ### Widget Begin -->
+
+        <!-- 指定广播接受者 -->
+        <receiver android:name=".module.widget.TimeWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider" /><!-- 指定provider -->
+        </receiver>
+
+        <!-- 指定时钟服务 -->
+        <service android:name=".module.widget.ClockService" />
+
         <!-- ### Widget End -->
 
         <service

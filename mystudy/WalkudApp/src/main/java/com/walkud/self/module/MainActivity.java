@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.walkud.self.R;
+import com.walkud.self.module.bluetooth.BluetoothActivity;
 import com.walkud.self.module.sqllite.realm.RealmMainActivity;
 import com.walkud.self.module.stetho.StethoActivity;
 import com.walkud.self.module.survive.SurviveActivity;
@@ -23,6 +24,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button stethoBtn;
     @Bind(R.id.transparentBtn)
     Button transparentBtn;
+    @Bind(R.id.bluetoothBtn)
+    Button bluetoothBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         surviveBtn.setOnClickListener(this);
         stethoBtn.setOnClickListener(this);
         transparentBtn.setOnClickListener(this);
+        bluetoothBtn.setOnClickListener(this);
+
     }
 
     @Override
@@ -52,6 +57,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.transparentBtn:
                 toIntent(TransparentActivity.class);
+                break;
+            case R.id.bluetoothBtn:
+                toIntent(BluetoothActivity.class);
                 break;
         }
     }
