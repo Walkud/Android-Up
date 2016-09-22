@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/banner_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/banner_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <com.shizhefei.view.indicator.FixedIndicatorView
+            android:id="@+id/banner_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/fragment_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/banner_framelayout"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="20dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp" />
+
+</RelativeLayout>
