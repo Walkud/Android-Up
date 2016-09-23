@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="GuideTheme" parent="@style/AppTheme">
+        <!--无导航栏 -->
+        <item name="windowActionBar">false</item>
+        <!--无标题栏 -->
+        <item name="windowNoTitle">true</item>
+        <!--全屏-->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>

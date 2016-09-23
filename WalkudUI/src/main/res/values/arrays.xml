@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="splash_bg">
+        <item>@color/shade_1</item>
+        <item>@color/shade_2</item>
+        <item>@color/shade_3</item>
+    </array>
+
+</resources>
