@@ -1,4 +1,3 @@
-234560
 # Android-Up
 Good Good Study ' Day Day Up
 
