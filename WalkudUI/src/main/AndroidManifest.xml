@@ -10,15 +10,20 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".GuideShadesActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/GuideTheme">
+            android:name=".GuideShadesSteepStatusBarActivity"
+            android:theme="@style/GuideSteepStatusBarTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".GuideShadesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/GuideTheme"/>
 
         <activity
             android:name=".GuideActivity"

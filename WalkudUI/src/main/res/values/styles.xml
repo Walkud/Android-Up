@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="GuideSteepStatusBarTheme" parent="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     <style name="GuideTheme" parent="@style/AppTheme">
         <!--无导航栏 -->
         <item name="windowActionBar">false</item>

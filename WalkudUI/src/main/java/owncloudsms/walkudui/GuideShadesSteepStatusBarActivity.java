@@ -1,5 +1,7 @@
 package owncloudsms.walkudui;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
@@ -20,7 +22,7 @@ import owncloudsms.walkudui.view.indicator.ShadesIndicatorViewPager;
  * Created by Walkud on 16/9/22.
  */
 
-public class GuideShadesActivity extends BaseActivity {
+public class GuideShadesSteepStatusBarActivity extends BaseActivity {
 
     //    @Bind(R.id.root_layout)
 //    FrameLayout rootLayout;
@@ -35,8 +37,14 @@ public class GuideShadesActivity extends BaseActivity {
     int[] colorBg;
 
     @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        setSteepStatusBar(true);
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public int getLayoutId() {
-        return R.layout.activity_guide;
+        return R.layout.activity_guide_steep_status_bar;
     }
 
     @Override
