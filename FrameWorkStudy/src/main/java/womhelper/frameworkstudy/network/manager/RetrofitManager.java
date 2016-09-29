@@ -31,7 +31,7 @@ import womhelper.frameworkstudy.utils.NetUtil;
  */
 public class RetrofitManager {
 
-    public static final String BASE_URL = "http://123.147.164.50:28000/";
+    public static final String BASE_URL = "";
     //超时时间(秒)
     public static final int OUT_TIME_SECONDS = 15;
     //短缓存有效期为1分钟
