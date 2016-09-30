@@ -26,7 +26,17 @@ public class MainActivity extends AppCompatActivity {
         MLog.v("v(msg,args:%s)", "arg");
         MLog.json("{\"name\":\"Logger\",\"age\":18}");
         MLog.wtf("wtf(msg,args:%s)", "arg");
-        MLog.xml("<a><b>BB<b><c>CC</c></a>");
+        MLog.xml("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                "<resources>\n" +
+                "\n" +
+                "    <attr name=\"main_menu_changetheme\" format=\"string\" />\n" +
+                "\n" +
+                "    <attr name=\"myTheme\" format=\"integer\">\n" +
+                "        <enum name=\"day\" value=\"0\" />\n" +
+                "        <enum name=\"night\" value=\"1\" />\n" +
+                "    </attr>\n" +
+                "\n" +
+                "</resources>");
 
     }
 
