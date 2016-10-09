@@ -2,6 +2,8 @@ package womhelper.frameworkstudy;
 
 import android.app.Application;
 
+import com.squareup.leakcanary.LeakCanary;
+
 import womhelper.frameworkstudy.utils.AppContextUtil;
 
 /**
@@ -17,6 +19,8 @@ public class App extends Application {
         super.onCreate();
         app = this;
         AppContextUtil.init(this);
+
+        LeakCanary.install(this);
     }
 
     public static App getContext() {

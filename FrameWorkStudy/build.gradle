@@ -20,6 +20,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        inside {
+        }
+
+        onLine {
+        }
+    }
 }
 
 dependencies {
@@ -42,9 +50,15 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
 
-    // stetho 用于开发调试
-//    compile 'com.facebook.stetho:stetho:1.3.1'
-//    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    //facebook出品的Android调试库
+    insideCompile 'com.facebook.stetho:stetho:1.3.1'
+    insideCompile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    onLineProvided 'com.facebook.stetho:stetho:1.3.1'
+    onLineProvided 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+
+    //内存泄漏检测库
+    insideCompile "com.squareup.leakcanary:leakcanary-android:1.3.1"
+    onLineCompile "com.squareup.leakcanary:leakcanary-android-no-op:1.3.1"
 
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'

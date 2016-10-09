@@ -1,5 +1,8 @@
 package womhelper.frameworkstudy.network.manager;
 
+import com.facebook.stetho.Stetho;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,6 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import womhelper.frameworkstudy.App;
+import womhelper.frameworkstudy.BuildConfig;
 import womhelper.frameworkstudy.network.service.ApiService;
 import womhelper.frameworkstudy.utils.NetUtil;
 
@@ -76,15 +80,21 @@ public class RetrofitManager {
         // 指定缓存路径
         Cache cache = new Cache(new File(App.getContext().getCacheDir(), "HttpCache"),
                 CACHE_SIZE);
-
-        return new OkHttpClient.Builder()
+        OkHttpClient.Builder builder = new OkHttpClient.Builder()
 //                .cache(cache)
                 //屏蔽掉缓存策略
 //                .addNetworkInterceptor(mRewriteCacheControlInterceptor)
                 .addInterceptor(logInterceptor)
 //                .addInterceptor(mBodyInterceptor)
-                .connectTimeout(OUT_TIME_SECONDS, TimeUnit.SECONDS)
-                .build();
+                .connectTimeout(OUT_TIME_SECONDS, TimeUnit.SECONDS);
+
+        if (BuildConfig.DEBUG) {
+            //测试环境把调试神器开启,便于测试
+            Stetho.initializeWithDefaults(App.getContext());
+            builder.addNetworkInterceptor(new StethoInterceptor());
+        }
+
+        return builder.build();
     }
 
     // 云端响应头拦截器，用于配置缓存策略
