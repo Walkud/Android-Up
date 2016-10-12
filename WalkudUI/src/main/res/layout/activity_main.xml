@@ -4,8 +4,8 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="owncloudsms.walkudui.MainActivity">
-
 
     <View
         android:layout_width="fill_parent"
@@ -34,5 +34,5 @@
         android:id="@+id/tabmain_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/tabmain_indicator" />
+        android:layout_above="@id/tabmain_indicator"/>
 </RelativeLayout>

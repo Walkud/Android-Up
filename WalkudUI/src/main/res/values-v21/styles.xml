@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="AppSteepStatusBarTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

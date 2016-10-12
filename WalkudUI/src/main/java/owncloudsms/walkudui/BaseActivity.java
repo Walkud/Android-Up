@@ -1,10 +1,8 @@
 package owncloudsms.walkudui;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
@@ -15,15 +13,9 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    /**
-     * 是否沉浸状态栏
-     **/
-    private boolean isSetStatusBar = false;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        steepStatusBar();
         setContentView(getLayoutId());
         ButterKnife.bind(this);
         initData();
@@ -46,31 +38,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 添加事件
      */
     public abstract void addListener();
-
-    /**
-     * 沉浸状态栏
-     */
-    private void steepStatusBar() {
-
-
-        if (isSetStatusBar && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // 透明状态栏
-            getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            // 透明导航栏
-            getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-        }
-    }
-
-    /**
-     * 是否设置沉浸状态栏
-     *
-     * @param isSetStatusBar
-     */
-    public void setSteepStatusBar(boolean isSetStatusBar) {
-        this.isSetStatusBar = isSetStatusBar;
-    }
 
     /**
      * 显示Toast提示

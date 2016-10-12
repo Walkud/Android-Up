@@ -1,6 +1,7 @@
 package owncloudsms.walkudui.fragment;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -18,15 +19,18 @@ public class MineFragment extends BaseFragment {
 
     @Bind(R.id.fragment_text)
     TextView textView;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
+        toolbar.setTitle("我的");
     }
 
     @Override
     public int getLyaoutId() {
-        return R.layout.fragment_tabmain;
+        return R.layout.fragment_tab_mine;
     }
 
     @Override

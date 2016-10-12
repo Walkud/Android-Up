@@ -3,6 +3,7 @@ package owncloudsms.walkudui.fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,14 +32,18 @@ public class HomeFragment extends BaseFragment {
     Indicator indicator;
     @Bind(R.id.fragment_text)
     TextView textView;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
 
     private BannerComponent bannerComponent;
 
     private String tabName;
 
+
     @Override
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
+        toolbar.setTitle("首页");
     }
 
     @Override

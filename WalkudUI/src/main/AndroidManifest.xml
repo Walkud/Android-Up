@@ -13,25 +13,32 @@
             android:name=".GuideShadesSteepStatusBarActivity"
             android:theme="@style/GuideSteepStatusBarTheme"
             android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name=".GuideShadesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/GuideTheme" >
+
+            </activity>
+
+        <activity
+            android:name=".GuideActivity"
+            android:screenOrientation="portrait" >
+
+            </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppSteepStatusBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".GuideShadesActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/GuideTheme"/>
-
-        <activity
-            android:name=".GuideActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize">
+        android:fitsSystemWindows="true">
 
         <TextView
             android:id="@+id/toolbar_title"
@@ -20,29 +20,11 @@
     </android.support.v7.widget.Toolbar>
 
 
-    <FrameLayout
-        android:id="@+id/banner_framelayout"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_below="@id/toolbar">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/banner_viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <com.shizhefei.view.indicator.FixedIndicatorView
-            android:id="@+id/banner_indicator"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_gravity="bottom" />
-    </FrameLayout>
-
     <TextView
         android:id="@+id/fragment_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/banner_framelayout"
+        android:layout_below="@id/toolbar"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:padding="20dp"

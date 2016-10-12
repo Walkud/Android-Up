@@ -38,7 +38,6 @@ public class GuideShadesSteepStatusBarActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setSteepStatusBar(true);
         super.onCreate(savedInstanceState);
     }
 

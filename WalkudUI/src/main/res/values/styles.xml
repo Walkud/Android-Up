@@ -1,20 +1,22 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="GuideSteepStatusBarTheme" parent="@style/Theme.AppCompat.Light.NoActionBar"/>
+    <style name="AppSteepStatusBarTheme" parent="AppTheme" />
+
+    <style name="GuideSteepStatusBarTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
 
     <style name="GuideTheme" parent="@style/AppTheme">
-        <!--无导航栏 -->
-        <item name="windowActionBar">false</item>
-        <!--无标题栏 -->
-        <item name="windowNoTitle">true</item>
         <!--全屏-->
         <item name="android:windowFullscreen">true</item>
     </style>
