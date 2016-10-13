@@ -26,6 +26,7 @@ public class MineFragment extends BaseFragment {
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
         toolbar.setTitle("我的");
+        steepStatusBar(toolbar);
     }
 
     @Override

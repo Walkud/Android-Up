@@ -8,4 +8,7 @@
     <color name="shade_2">#733AE6</color>
     <color name="shade_3">#FCB740</color>
 
+    <color name="windowBg">#E9E9E9</color>
+    <color name="white">@android:color/white</color>
+
 </resources>

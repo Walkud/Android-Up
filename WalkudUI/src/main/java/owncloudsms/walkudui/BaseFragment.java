@@ -1,9 +1,13 @@
 package owncloudsms.walkudui;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.shizhefei.fragment.LazyFragment;
+
+import java.lang.reflect.Field;
 
 import butterknife.ButterKnife;
 
@@ -46,6 +50,54 @@ public abstract class BaseFragment extends LazyFragment {
      */
     public void showToast(String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroyViewLazy() {
+        super.onDestroyViewLazy();
+        ButterKnife.unbind(this);
+    }
+
+    /**
+     * 设置沉侵式顶部状态栏间距
+     *
+     * @param view
+     */
+    public void steepStatusBar(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            int statusBarHeight = getStatusBarHeight();
+            view.getLayoutParams().height += statusBarHeight;
+            view.setPadding(view.getPaddingLeft(), statusBarHeight,
+                    view.getPaddingRight(),
+                    view.getPaddingBottom());
+        }
+    }
+
+
+    /**
+     * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+     */
+    public int dip2px(float dpValue) {
+        final float scale = getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+
+    /**
+     * 通过反射的方式获取状态栏高度
+     *
+     * @return
+     */
+    private int getStatusBarHeight() {
+        try {
+            Class<?> c = Class.forName("com.android.internal.R$dimen");
+            Object obj = c.newInstance();
+            Field field = c.getField("status_bar_height");
+            int x = Integer.parseInt(field.get(obj).toString());
+            return getResources().getDimensionPixelSize(x);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dip2px(25);
     }
 
 }
