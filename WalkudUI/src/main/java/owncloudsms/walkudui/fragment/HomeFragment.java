@@ -2,7 +2,6 @@ package owncloudsms.walkudui.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -41,8 +40,8 @@ public class HomeFragment extends BaseFragment implements SuperSwipeRefreshLayou
     Toolbar toolbar;
     @Bind(R.id.toolbar_title)
     TextView toolbarTitle;
-    @Bind(R.id.swipe_refresh)
-    SuperSwipeRefreshLayout swipeRefresh;
+    //    @Bind(R.id.swipe_refresh)
+//    SuperSwipeRefreshLayout swipeRefresh;
     @Bind(R.id.action_recycler_view)
     RecyclerView actionRecyclerView;
 
@@ -110,8 +109,8 @@ public class HomeFragment extends BaseFragment implements SuperSwipeRefreshLayou
         tabName = bundle.getString("intent_String_tabname");
 
         //被包含的View是否随手指的移动而移动
-        swipeRefresh.setTargetScrollWithLayout(false);
-        swipeRefresh.setOnPullRefreshListener(this);
+//        swipeRefresh.setTargetScrollWithLayout(false);
+//        swipeRefresh.setOnPullRefreshListener(this);
 
         indicator.setScrollBar(new ColorBar(getApplicationContext(), Color.WHITE, 0, ScrollBar.Gravity.CENTENT_BACKGROUND));
         viewPager.setOffscreenPageLimit(2);
@@ -214,13 +213,13 @@ public class HomeFragment extends BaseFragment implements SuperSwipeRefreshLayou
      */
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                swipeRefresh.setRefreshing(false);
-            }
-        }, 2000);
+//        new Handler().postDelayed(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                swipeRefresh.setRefreshing(false);
+//            }
+//        }, 2000);
     }
 
     /**

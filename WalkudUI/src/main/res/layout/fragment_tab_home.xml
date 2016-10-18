@@ -1,100 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentTop="true"
-        android:background="?attr/colorPrimary">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/localtion_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="5dp"
-            android:text="水晶郦城"
-            android:textColor="?android:textColorPrimary" />
-
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="16sp" />
-
-    </android.support.v7.widget.Toolbar>
-
-    <owncloudsms.walkudui.view.SuperSwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar">
-
-        <owncloudsms.walkudui.view.scroll.MyNestedScrollView
-            android:id="@+id/scroll_view"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:overScrollMode="never"
-            android:scrollbars="none">
+            android:layout_height="256dp"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/iv_header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/p1" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/action_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="5dp" />
-
-                <FrameLayout
-                    android:id="@+id/banner_framelayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="10dp">
-
-                    <android.support.v4.view.ViewPager
-                        android:id="@+id/banner_viewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <com.shizhefei.view.indicator.FixedIndicatorView
-                        android:id="@+id/banner_indicator"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_gravity="bottom" />
-                </FrameLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
 
                 <TextView
-                    android:id="@+id/community_activities_text"
-                    android:layout_width="match_parent"
+                    android:id="@+id/localtion_btn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/white"
-                    android:paddingLeft="10dp"
-                    android:text="小区活动"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="14sp" />
+                    android:layout_gravity="start"
+                    android:layout_marginStart="5dp"
+                    android:text="水晶郦城"
+                    android:textColor="?android:textColorPrimary" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/community_activities_recycler"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="5dp"
-                    android:paddingBottom="10dp" />
+                    android:layout_gravity="center"
+                    android:text="水晶郦城"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="20sp" />
 
-            </LinearLayout>
-        </owncloudsms.walkudui.view.scroll.MyNestedScrollView>
+            </android.support.v7.widget.Toolbar>
 
-    </owncloudsms.walkudui.view.SuperSwipeRefreshLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
 
-</RelativeLayout>
+    <!--<owncloudsms.walkudui.view.SuperSwipeRefreshLayout-->
+    <!--android:id="@+id/swipe_refresh"-->
+    <!--android:layout_width="match_parent"-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+    <!--android:layout_height="match_parent">-->
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/action_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="5dp" />
+
+            <FrameLayout
+                android:id="@+id/banner_framelayout"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/banner_viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.shizhefei.view.indicator.FixedIndicatorView
+                    android:id="@+id/banner_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="bottom" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/community_activities_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:paddingLeft="10dp"
+                android:text="小区活动"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/community_activities_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:paddingBottom="10dp" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <!--</owncloudsms.walkudui.view.SuperSwipeRefreshLayout>-->
+
+</android.support.design.widget.CoordinatorLayout>
