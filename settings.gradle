@@ -1,1 +1,1 @@
-include ':studyjams:app', ':mystudy:WalkudApp', ':mystudy:WalkudJava', ':studyjams:GraduationApp', ':studyjams:BeautyOfChongQing', ':mystudy:CallPhone', ':WalkudUI', ':FrameWorkStudy'
+include ':studyjams:app', ':mystudy:WalkudApp', ':mystudy:WalkudJava', ':studyjams:GraduationApp', ':studyjams:BeautyOfChongQing', ':mystudy:CallPhone', ':WalkudUI', ':FrameWorkStudy','Scan'
