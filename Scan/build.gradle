@@ -32,6 +32,7 @@ dependencies {
 
 //创建Jar包，生成目录在build/libs
 task createZbarJar(type: Jar) {
+    delete 'build/libs/Zbar.jar'
     //指定生成的jar名
     baseName 'Zbar'
     from 'build/intermediates/classes/release/'
@@ -39,7 +40,7 @@ task createZbarJar(type: Jar) {
     exclude "com/zbar/lib/BuildConfig\$*.class"
     exclude "**/R.class"
     exclude "**/R\$*.class"
-    include '**/*.class'
+    include 'com/**/*.class'
     println 'createZbarJar'
 }
 
