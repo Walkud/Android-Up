@@ -15,4 +15,17 @@
         <enum name="night" value="1" />
     </attr>
 
+
+    <declare-styleable name="InstrumentView">
+        <!-- 底层背景资源 -->
+        <attr name="dst_img" format="reference" />
+        <!-- 上层资源 -->
+        <attr name="src_img" format="reference" />
+        <!--中心点资源-->
+        <attr name="center_point_img" format="reference" />
+        <!--指针资源-->
+        <attr name="pointer_img" format="reference" />
+
+    </declare-styleable>
+
 </resources>

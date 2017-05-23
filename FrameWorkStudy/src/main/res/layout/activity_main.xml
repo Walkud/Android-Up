@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -13,12 +14,25 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Hello World!"
+        android:visibility="gone" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="login"
-        android:text="登录" />
+        android:text="登录"
+        android:visibility="gone" />
+
+
+    <womhelper.frameworkstudy.view.InstrumentView
+        android:id="@+id/instrument_view"
+        android:layout_width="282dp"
+        android:layout_height="282dp"
+        android:layout_centerInParent="true"
+        app:center_point_img="@mipmap/icon_needle2"
+        app:dst_img="@mipmap/icon_stopwatch"
+        app:pointer_img="@mipmap/icon_needle"
+        app:src_img="@mipmap/icon_stopwatch_full" />
 
 </RelativeLayout>
