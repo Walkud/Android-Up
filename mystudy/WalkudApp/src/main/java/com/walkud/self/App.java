@@ -1,14 +1,13 @@
 package com.walkud.self;
 
 import android.app.Application;
-import android.util.Log;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
-import com.walkud.self.utils.RealmUtil;
 
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 import okhttp3.OkHttpClient;
 
 /**
@@ -22,6 +21,12 @@ public class App extends Application {
 
     public static App getInstance() {
         return app;
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this); //分包处理，解决64k问题
     }
 
     @Override
@@ -39,9 +44,10 @@ public class App extends Application {
      * 初始化数据库
      */
     private void initRealm() {
-        RealmConfiguration config = RealmUtil.getConfig(this);
-        Log.d("App", "RealmConfiguration info : " + config.toString());
-        Realm.setDefaultConfiguration(config);
+//        RealmConfiguration config = RealmUtil.getConfig(this);
+//        Log.d("App", "RealmConfiguration info : " + config.toString());
+//        Realm.setDefaultConfiguration(config);
+        Realm.init(this);
     }
 
     /**

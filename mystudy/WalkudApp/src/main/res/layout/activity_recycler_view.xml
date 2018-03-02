@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#f4f4f4"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingEnd="17dp"
+            android:paddingStart="17dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="效果图.png"
+                android:textColor="@color/c_0f0f12" />
+
+            <ImageView
+                android:id="@+id/hint_info_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/icon_prompt_v2" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <com.hhl.recyclerviewindicator.CirclePageIndicator
+            android:id="@+id/first_page_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            app:fillColor="@color/colorPrimary"
+            app:pageColor="@color/c_0f0f12"
+            app:strokeColor="@color/c_0f0f12" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/c_0f0f12"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

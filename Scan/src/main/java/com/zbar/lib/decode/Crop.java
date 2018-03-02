@@ -10,6 +10,13 @@ public class Crop {
     private int cropWidth = 0;
     private int cropHeight = 0;
 
+    public Crop(int x, int y, int cropWidth, int cropHeight) {
+        this.x = x;
+        this.y = y;
+        this.cropWidth = cropWidth;
+        this.cropHeight = cropHeight;
+    }
+
     public int getCropHeight() {
         return cropHeight;
     }

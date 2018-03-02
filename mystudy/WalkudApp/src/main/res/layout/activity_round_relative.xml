@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+
+    <FrameLayout
+        android:layout_width="146dp"
+        android:layout_height="146dp"
+        android:layout_gravity="center"
+        android:clipChildren="false">
+
+        <com.walkud.self.module.customview.RoundShadowView
+            android:id="@+id/shadow_view"
+            android:layout_width="176dp"
+            android:layout_height="176dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:rsv_bmf_radius="15dp"
+            app:rsv_color="@color/c_0f0f12"
+            app:rsv_padding="20dp"
+            app:rsv_round_radius="7dp" />
+
+        <com.walkud.self.view.RoundRelativeLayout
+            android:id="@+id/round_relative_layout"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:layout_gravity="center"
+            android:background="@drawable/home_menu_normal"
+            android:clipChildren="false"
+            android:visibility="visible"
+            app:border_color="#eeeeee"
+            app:border_size="3dp"
+            app:rfl_radius="7dp">
+
+        </com.walkud.self.view.RoundRelativeLayout>
+
+    </FrameLayout>
+
+
+</FrameLayout>

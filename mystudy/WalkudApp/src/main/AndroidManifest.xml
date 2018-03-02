@@ -12,6 +12,8 @@
     <!-- 蓝牙权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 允许访问摄像头进行拍照 -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".App"
@@ -56,6 +58,37 @@
 
         <activity
             android:name=".module.bluetooth.BluetoothActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.share.IntentShareActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.qrc.ScanQrcActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.customview.RoundRelativeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.pagergrid.GridPagerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.pagergrid.helper.GridPagerHelperActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.pagergrid.paper.RecyclerViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.messenger.MessengerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.i18n.I18nActivity"
             android:screenOrientation="portrait" />
 
         <receiver
@@ -141,6 +174,18 @@
             android:name=".module.survive.service.RestartService"
             android:enabled="true"
             android:process="com.walud.self.restart" />
+
+        <service
+            android:name=".module.messenger.MesengerServer"
+            android:enabled="true"
+            android:exported="true"
+            android:process="com.walkud.self.messenger.service">
+            <intent-filter>
+                <action android:name="com.walkud.self.messenger.study" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

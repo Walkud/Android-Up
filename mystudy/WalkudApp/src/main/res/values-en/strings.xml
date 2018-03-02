@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WalkudApp</string>
+    <string name="switch_language">To switch between languages</string>
+    <string name="language_text">You are the best!</string>
+</resources>

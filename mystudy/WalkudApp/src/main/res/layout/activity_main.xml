@@ -1,35 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="5dp"
     tools:context=".module.MainActivity">
 
-    <Button
-        android:id="@+id/realmMainBtn"
-        style="@style/MainButton"
-        android:text="RealmMain" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
 
-    <Button
-        android:id="@+id/stethoBtn"
-        style="@style/MainButton"
-        android:text="Stetho" />
+        <Button
+            android:id="@+id/realmMainBtn"
+            style="@style/MainButton"
+            android:text="RealmMain" />
 
-    <Button
-        android:id="@+id/surviveBtn"
-        style="@style/MainButton"
-        android:text="ProgressSurvive" />
+        <Button
+            android:id="@+id/stethoBtn"
+            style="@style/MainButton"
+            android:text="Stetho" />
 
-    <Button
-        android:id="@+id/transparentBtn"
-        style="@style/MainButton"
-        android:text="TransparentActivity" />
+        <Button
+            android:id="@+id/surviveBtn"
+            style="@style/MainButton"
+            android:text="ProgressSurvive" />
 
-    <Button
-        android:id="@+id/bluetoothBtn"
-        style="@style/MainButton"
-        android:text="BluetoothActivity" />
+        <Button
+            android:id="@+id/transparentBtn"
+            style="@style/MainButton"
+            android:text="TransparentActivity" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/bluetoothBtn"
+            style="@style/MainButton"
+            android:text="BluetoothActivity" />
+
+        <Button
+            android:id="@+id/shareBtn"
+            style="@style/MainButton"
+            android:text="ShareButton" />
+
+        <Button
+            android:id="@+id/scanQrcBtn"
+            style="@style/MainButton"
+            android:text="ScanQrcBtn" />
+
+        <Button
+            android:id="@+id/roundView"
+            style="@style/MainButton"
+            android:text="RoundView" />
+
+        <Button
+            android:id="@+id/messengerView"
+            style="@style/MainButton"
+            android:text="MessengerView" />
+
+        <Button
+            android:id="@+id/i18nView"
+            style="@style/MainButton"
+            android:text="国际化" />
+
+    </LinearLayout>
+</ScrollView>

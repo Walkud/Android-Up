@@ -8,9 +8,7 @@ import android.widget.ListView;
 
 import com.walkud.self.R;
 import com.walkud.self.module.BaseActivity;
-import com.walkud.self.module.sqllite.realm.adapter.UserAdapter;
 import com.walkud.self.module.sqllite.realm.bean.User;
-import com.walkud.self.utils.RealmUtil;
 
 import java.util.Date;
 import java.util.Random;
@@ -111,7 +109,7 @@ public class BasisRealmActivity extends BaseActivity implements View.OnClickList
     private void modidfyData() {
         realm.beginTransaction();
         //删除第一条记录
-        realm.where(User.class).findFirst().removeFromRealm();
+        realm.where(User.class).findFirst().deleteFromRealm();
         realm.commitTransaction();
     }
 
@@ -120,8 +118,8 @@ public class BasisRealmActivity extends BaseActivity implements View.OnClickList
      */
     private void queryData() {
         RealmResults<User> users = realm.where(User.class).findAll();
-        UserAdapter adapter = new UserAdapter(this, users, true);
-        basisRealmLV.setAdapter(adapter);
+//        UserAdapter adapter = new UserAdapter(this, users, true);
+//        basisRealmLV.setAdapter(adapter);
     }
 
 

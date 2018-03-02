@@ -117,13 +117,14 @@ public class HomeFragment extends BaseFragment implements SuperSwipeRefreshLayou
 
         bannerComponent = new BannerComponent(indicator, viewPager, false);
         bannerComponent.setAdapter(adapter);
-        bannerComponent.setAutoPlayTime(2500);
+        bannerComponent.setAutoPlayTime(100000);
 
         initToolBar();
         initActionRecyclerView();
     }
 
-    private int[] images = {R.mipmap.p1, R.mipmap.p2, R.mipmap.p3, R.mipmap.p4};
+//    private int[] images = {R.mipmap.p1, R.mipmap.p2, R.mipmap.p3, R.mipmap.p4};
+        private int[] images = {R.mipmap.p1};
 
     private IndicatorViewPager.IndicatorViewPagerAdapter adapter = new IndicatorViewPager.IndicatorViewPagerAdapter() {
 
@@ -137,6 +138,7 @@ public class HomeFragment extends BaseFragment implements SuperSwipeRefreshLayou
 
         @Override
         public View getViewForPage(int position, View convertView, ViewGroup container) {
+            Log.d("HomeFragment", "position:" + position);
             if (convertView == null) {
                 convertView = new ImageView(getApplicationContext());
                 convertView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
