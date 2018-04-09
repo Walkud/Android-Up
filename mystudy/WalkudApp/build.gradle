@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
@@ -23,6 +26,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs += 'src/main/kotlin'
+        }
+
     }
 
     productFlavors {
@@ -51,4 +61,6 @@ dependencies {
     compile 'com.hhl:gridpagersnaphelper:1.0.0'
     // Optional , config indicator
     compile 'com.hhl:recyclerviewindicator:1.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
 }

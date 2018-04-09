@@ -25,11 +25,11 @@
         <activity
             android:name=".module.MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity
@@ -89,6 +89,18 @@
 
         <activity
             android:name=".module.i18n.I18nActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.NavActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mvp.ui.FirstActivity"
             android:screenOrientation="portrait" />
 
         <receiver

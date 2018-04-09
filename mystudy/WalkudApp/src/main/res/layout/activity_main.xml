@@ -61,5 +61,10 @@
             style="@style/MainButton"
             android:text="国际化" />
 
+        <Button
+            android:id="@+id/kotlinMvp"
+            style="@style/MainButton"
+            android:text="KotlinMvp" />
+
     </LinearLayout>
 </ScrollView>

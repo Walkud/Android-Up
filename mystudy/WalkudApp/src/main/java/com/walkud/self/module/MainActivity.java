@@ -15,6 +15,7 @@ import com.walkud.self.module.sqllite.realm.RealmMainActivity;
 import com.walkud.self.module.stetho.StethoActivity;
 import com.walkud.self.module.survive.SurviveActivity;
 import com.walkud.self.module.transparent.TransparentActivity;
+import com.walkud.self.mvp.ui.NavActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -41,6 +42,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button messengerView;
     @Bind(R.id.i18nView)
     Button i18nView;
+    @Bind(R.id.kotlinMvp)
+    Button kotlinMvp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         roundView.setOnClickListener(this);
         messengerView.setOnClickListener(this);
         i18nView.setOnClickListener(this);
+        kotlinMvp.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +98,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.i18nView:
                 toIntent(I18nActivity.class);
+                break;
+            case R.id.kotlinMvp:
+                toIntent(NavActivity.class);
                 break;
         }
     }
