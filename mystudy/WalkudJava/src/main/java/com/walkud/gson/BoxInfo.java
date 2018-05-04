@@ -17,6 +17,7 @@ public class BoxInfo {
     private String ip;
     private String code;
     private String name;
+    private long expireTime;
 
     public boolean isFinish() {
         return finish;
@@ -50,6 +51,14 @@ public class BoxInfo {
         this.name = name;
     }
 
+    public long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(long expireTime) {
+        this.expireTime = expireTime;
+    }
+
     @Override
     public String toString() {
         return "BoxInfo{" +
@@ -57,6 +66,7 @@ public class BoxInfo {
                 ", ip='" + ip + '\'' +
                 ", code='" + code + '\'' +
                 ", name='" + name + '\'' +
+                ", expireTime=" + expireTime +
                 '}';
     }
 }

@@ -15,7 +15,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -32,13 +32,13 @@ public class IntentShareActivity extends BaseActivity {
 
     private boolean isMi = true;
 
-    @Bind(R.id.single_img_btn)
+    @BindView(R.id.single_img_btn)
     Button singleImgBtn;
-    @Bind(R.id.mulit_img_btn)
+    @BindView(R.id.mulit_img_btn)
     Button mulitImgBtn;
-    @Bind(R.id.single_file_btn)
+    @BindView(R.id.single_file_btn)
     Button singleFileBtn;
-    @Bind(R.id.mulit_file_btn)
+    @BindView(R.id.mulit_file_btn)
     Button mulitFileBtn;
 
     @Override

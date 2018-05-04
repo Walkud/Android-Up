@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.walkud.jam.R;
 import com.walkud.jam.module.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,23 +17,23 @@ import butterknife.ButterKnife;
  */
 public class BasketBallActivity extends BaseActivity implements View.OnClickListener {
 
-    @Bind(R.id.teamScoreA)
+    @BindView(R.id.teamScoreA)
     TextView teamScoreA;
-    @Bind(R.id.fa3Btn)
+    @BindView(R.id.fa3Btn)
     Button fa3Btn;
-    @Bind(R.id.fa2Btn)
+    @BindView(R.id.fa2Btn)
     Button fa2Btn;
-    @Bind(R.id.ftaBtn)
+    @BindView(R.id.ftaBtn)
     Button ftaBtn;
-    @Bind(R.id.teamScoreB)
+    @BindView(R.id.teamScoreB)
     TextView teamScoreB;
-    @Bind(R.id.fb3Btn)
+    @BindView(R.id.fb3Btn)
     Button fb3Btn;
-    @Bind(R.id.fb2Btn)
+    @BindView(R.id.fb2Btn)
     Button fb2Btn;
-    @Bind(R.id.ftbBtn)
+    @BindView(R.id.ftbBtn)
     Button ftbBtn;
-    @Bind(R.id.resetBtn)
+    @BindView(R.id.resetBtn)
     Button resetBtn;
 
     int scoreTeamA = 0;

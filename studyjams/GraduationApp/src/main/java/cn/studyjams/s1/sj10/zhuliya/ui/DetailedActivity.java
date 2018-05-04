@@ -23,7 +23,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.studyjams.s1.sj10.zhuliya.Configs;
 import cn.studyjams.s1.sj10.zhuliya.R;
@@ -48,27 +48,27 @@ public class DetailedActivity extends BaseActivity {
 
     private static final String TAG = DetailedActivity.class.getSimpleName();
 
-    @Bind(R.id.bushouTV)
+    @BindView(R.id.bushouTV)
     TextView bushouTV;
-    @Bind(R.id.headTV)
+    @BindView(R.id.headTV)
     TextView headTV;
-    @Bind(R.id.pinyinTV)
+    @BindView(R.id.pinyinTV)
     TextView pinyinTV;
-    @Bind(R.id.chengyujsTV)
+    @BindView(R.id.chengyujsTV)
     TextView chengyujsTV;
-    @Bind(R.id.from_TV)
+    @BindView(R.id.from_TV)
     TextView fromTV;
-    @Bind(R.id.exampleTV)
+    @BindView(R.id.exampleTV)
     TextView exampleTV;
-    @Bind(R.id.yufaTV)
+    @BindView(R.id.yufaTV)
     TextView yufaTV;
-    @Bind(R.id.ciyujsTV)
+    @BindView(R.id.ciyujsTV)
     TextView ciyujsTV;
-    @Bind(R.id.yinzhengjsTV)
+    @BindView(R.id.yinzhengjsTV)
     TextView yinzhengjsTV;
-    @Bind(R.id.tongyiGV)
+    @BindView(R.id.tongyiGV)
     ScrollGridView tongyiGV;
-    @Bind(R.id.fanyiGV)
+    @BindView(R.id.fanyiGV)
     ScrollGridView fanyiGV;
 
     private ActionBar actionBar;

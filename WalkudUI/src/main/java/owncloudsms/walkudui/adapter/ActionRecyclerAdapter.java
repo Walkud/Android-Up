@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import owncloudsms.walkudui.R;
 import owncloudsms.walkudui.adapter.ActionRecyclerAdapter.ActionViewHolder;
@@ -53,9 +53,9 @@ public class ActionRecyclerAdapter extends RecyclerView.Adapter<ActionViewHolder
 
     static class ActionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @Bind(R.id.action_item_image_view)
+        @BindView(R.id.action_item_image_view)
         ImageView actionIV;
-        @Bind(R.id.ation_item_text_view)
+        @BindView(R.id.ation_item_text_view)
         TextView ationTV;
         OnRecyclerViewItemClickListener listener;
 

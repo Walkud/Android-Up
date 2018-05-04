@@ -18,7 +18,7 @@ import com.shizhefei.view.indicator.IndicatorViewPager;
 import com.shizhefei.view.indicator.slidebar.ColorBar;
 import com.shizhefei.view.indicator.slidebar.ScrollBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import owncloudsms.walkudui.BaseFragment;
 import owncloudsms.walkudui.R;
 import owncloudsms.walkudui.adapter.ActionRecyclerAdapter;
@@ -32,20 +32,20 @@ import owncloudsms.walkudui.view.scroll.GridLayoutManagerPlus;
  */
 public class HomeFragment extends BaseFragment implements SuperSwipeRefreshLayout.OnPullRefreshListener {
 
-    @Bind(R.id.banner_viewPager)
+    @BindView(R.id.banner_viewPager)
     ViewPager viewPager;
-    @Bind(R.id.banner_indicator)
+    @BindView(R.id.banner_indicator)
     Indicator indicator;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.toolbar_title)
+    @BindView(R.id.toolbar_title)
     TextView toolbarTitle;
-    //    @Bind(R.id.swipe_refresh)
+    //    @BindView(R.id.swipe_refresh)
 //    SuperSwipeRefreshLayout swipeRefresh;
-    @Bind(R.id.action_recycler_view)
+    @BindView(R.id.action_recycler_view)
     RecyclerView actionRecyclerView;
 
-    @Bind(R.id.community_activities_recycler)
+    @BindView(R.id.community_activities_recycler)
     RecyclerView communityActRecyclerView;
 
 

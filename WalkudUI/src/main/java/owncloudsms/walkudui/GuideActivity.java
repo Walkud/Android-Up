@@ -11,7 +11,7 @@ import com.shizhefei.view.indicator.ScrollIndicatorView;
 import com.shizhefei.view.indicator.slidebar.DrawableBar;
 import com.shizhefei.view.indicator.slidebar.ScrollBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by Walkud on 16/9/22.
@@ -19,9 +19,9 @@ import butterknife.Bind;
 
 public class GuideActivity extends BaseActivity {
 
-    @Bind(R.id.guide_viewPager)
+    @BindView(R.id.guide_viewPager)
     ViewPager viewPager;
-    @Bind(R.id.guide_indicator)
+    @BindView(R.id.guide_indicator)
     ScrollIndicatorView scrollIndicatorView;
 
     private IndicatorViewPager indicatorViewPager;

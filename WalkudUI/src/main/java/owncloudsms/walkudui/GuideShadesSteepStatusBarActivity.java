@@ -15,7 +15,7 @@ import com.shizhefei.view.indicator.ScrollIndicatorView;
 import com.shizhefei.view.indicator.slidebar.DrawableBar;
 import com.shizhefei.view.indicator.slidebar.ScrollBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import owncloudsms.walkudui.view.indicator.ShadesIndicatorViewPager;
 
 /**
@@ -24,11 +24,11 @@ import owncloudsms.walkudui.view.indicator.ShadesIndicatorViewPager;
 
 public class GuideShadesSteepStatusBarActivity extends BaseActivity {
 
-    //    @Bind(R.id.root_layout)
+    //    @BindView(R.id.root_layout)
 //    FrameLayout rootLayout;
-    @Bind(R.id.guide_viewPager)
+    @BindView(R.id.guide_viewPager)
     ViewPager viewPager;
-    @Bind(R.id.guide_indicator)
+    @BindView(R.id.guide_indicator)
     ScrollIndicatorView scrollIndicatorView;
 
     private ShadesIndicatorViewPager indicatorViewPager;

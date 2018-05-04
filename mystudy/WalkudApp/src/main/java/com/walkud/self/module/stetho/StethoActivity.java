@@ -16,7 +16,7 @@ import com.walkud.self.module.stetho.db.SdkDbActivity;
 import java.io.IOException;
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -27,14 +27,14 @@ import okhttp3.Response;
  */
 public class StethoActivity extends BaseActivity implements View.OnClickListener {
 
-    @Bind(R.id.stetho_zengjia)
+    @BindView(R.id.stetho_zengjia)
     Button zengjia;
-    @Bind(R.id.stetho_get_sp)
+    @BindView(R.id.stetho_get_sp)
     Button modifyBtn;
-    @Bind(R.id.stetho_toSdkDb)
+    @BindView(R.id.stetho_toSdkDb)
     Button stethoToSdkDb;
     SharedPreferences sp;
-    @Bind(R.id.stetho_okhttp)
+    @BindView(R.id.stetho_okhttp)
     Button stethoOkhttp;
 
     private String key;

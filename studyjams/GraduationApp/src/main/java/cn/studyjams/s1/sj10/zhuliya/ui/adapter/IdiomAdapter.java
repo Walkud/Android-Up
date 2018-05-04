@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.studyjams.s1.sj10.zhuliya.R;
 import cn.studyjams.s1.sj10.zhuliya.bean.IdiomRealm;
@@ -59,7 +59,7 @@ public class IdiomAdapter extends RealmBaseAdapter<IdiomRealm> {
     }
 
     static class ViewHolder {
-        @Bind(R.id.idiomItemTV)
+        @BindView(R.id.idiomItemTV)
         TextView idiomItemTV;
 
         ViewHolder(View view) {

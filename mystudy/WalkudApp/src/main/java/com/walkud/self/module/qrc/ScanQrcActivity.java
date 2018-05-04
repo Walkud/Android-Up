@@ -28,7 +28,7 @@ import com.zbar.lib.decode.InactivityTimer;
 
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.zbar.lib.decode.CaptureActivityHandler.RESTART_PREVIEW;
@@ -41,13 +41,13 @@ public class ScanQrcActivity extends BaseActivity implements Callback, DecodeLis
 
     private static final float BEEP_VOLUME = 0.50f;//音量大小
 
-    @Bind(R.id.capture_preview)
+    @BindView(R.id.capture_preview)
     SurfaceView capturePreview;
-    @Bind(R.id.capture_scan_line)
+    @BindView(R.id.capture_scan_line)
     ImageView captureScanLine;
-    @Bind(R.id.capture_crop_layout)
+    @BindView(R.id.capture_crop_layout)
     FrameLayout captureCropLayout;
-    @Bind(R.id.capture_containter)
+    @BindView(R.id.capture_containter)
     RelativeLayout captureContainter;
 
     private CaptureActivityHandler handler;

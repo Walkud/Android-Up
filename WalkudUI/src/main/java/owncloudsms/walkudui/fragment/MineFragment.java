@@ -6,9 +6,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import owncloudsms.walkudui.BaseFragment;
 import owncloudsms.walkudui.R;
+import owncloudsms.walkudui.test.AutoCompleteTextViewActivity;
 
 /**
  * 我的
@@ -17,9 +18,9 @@ import owncloudsms.walkudui.R;
 public class MineFragment extends BaseFragment {
     private String tabName;
 
-    @Bind(R.id.fragment_text)
+    @BindView(R.id.fragment_text)
     TextView textView;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     @Override
@@ -46,9 +47,11 @@ public class MineFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast(tabName + "点击事件");
+//                showToast(tabName + "点击事件");
+                toIntent(AutoCompleteTextViewActivity.class);
             }
         });
+
     }
 
     @Override

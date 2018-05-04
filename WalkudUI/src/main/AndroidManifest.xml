@@ -11,23 +11,23 @@
 
         <activity
             android:name=".GuideShadesSteepStatusBarActivity"
-            android:theme="@style/GuideSteepStatusBarTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/GuideSteepStatusBarTheme">
 
         </activity>
 
         <activity
             android:name=".GuideShadesActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/GuideTheme" >
+            android:theme="@style/GuideTheme">
 
-            </activity>
+        </activity>
 
         <activity
             android:name=".GuideActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
 
-            </activity>
+        </activity>
 
         <activity
             android:name=".MainActivity"
@@ -39,6 +39,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".test.AutoCompleteTextViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

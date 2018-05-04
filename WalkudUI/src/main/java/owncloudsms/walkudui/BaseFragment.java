@@ -1,5 +1,6 @@
 package owncloudsms.walkudui;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.shizhefei.fragment.LazyFragment;
 import java.lang.reflect.Field;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Fragment基类
@@ -17,11 +19,13 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseFragment extends LazyFragment {
 
+    protected Unbinder unbinder;
+
     @Override
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
         setContentView(getLyaoutId());
-        ButterKnife.bind(this, getContentView());
+        unbinder = ButterKnife.bind(this, getContentView());
         initData();
         addListener();
     }
@@ -55,7 +59,7 @@ public abstract class BaseFragment extends LazyFragment {
     @Override
     protected void onDestroyViewLazy() {
         super.onDestroyViewLazy();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     /**
@@ -100,4 +104,8 @@ public abstract class BaseFragment extends LazyFragment {
         return dip2px(25);
     }
 
+    protected void toIntent(Class cls) {
+        Intent intent = new Intent(getActivity(), cls);
+        startActivity(intent);
+    }
 }

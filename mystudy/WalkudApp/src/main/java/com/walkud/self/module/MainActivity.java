@@ -1,6 +1,8 @@
 package com.walkud.self.module;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,38 +13,37 @@ import com.walkud.self.module.messenger.MessengerActivity;
 import com.walkud.self.module.pagergrid.paper.RecyclerViewActivity;
 import com.walkud.self.module.qrc.ScanQrcActivity;
 import com.walkud.self.module.share.IntentShareActivity;
-import com.walkud.self.module.sqllite.realm.RealmMainActivity;
 import com.walkud.self.module.stetho.StethoActivity;
 import com.walkud.self.module.survive.SurviveActivity;
 import com.walkud.self.module.transparent.TransparentActivity;
+import com.walkud.self.module.view.AutoCompleteTextViewActivity;
 import com.walkud.self.mvp.ui.NavActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
-
-    @Bind(R.id.realmMainBtn)
-    Button realmMainBtn;
-    @Bind(R.id.surviveBtn)
-    Button surviveBtn;
-    @Bind(R.id.stethoBtn)
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.testViewBtn)
+    Button testViewBtn;
+    @BindView(R.id.stethoBtn)
     Button stethoBtn;
-    @Bind(R.id.transparentBtn)
+    @BindView(R.id.surviveBtn)
+    Button surviveBtn;
+    @BindView(R.id.transparentBtn)
     Button transparentBtn;
-    @Bind(R.id.bluetoothBtn)
+    @BindView(R.id.bluetoothBtn)
     Button bluetoothBtn;
-    @Bind(R.id.shareBtn)
+    @BindView(R.id.shareBtn)
     Button shareBtn;
-    @Bind(R.id.scanQrcBtn)
+    @BindView(R.id.scanQrcBtn)
     Button scanQrcBtn;
-    @Bind(R.id.roundView)
+    @BindView(R.id.roundView)
     Button roundView;
-    @Bind(R.id.messengerView)
+    @BindView(R.id.messengerView)
     Button messengerView;
-    @Bind(R.id.i18nView)
+    @BindView(R.id.i18nView)
     Button i18nView;
-    @Bind(R.id.kotlinMvp)
+    @BindView(R.id.kotlinMvp)
     Button kotlinMvp;
 
     @Override
@@ -50,8 +51,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        realmMainBtn.setOnClickListener(this);
+        testViewBtn.setOnClickListener(this);
         surviveBtn.setOnClickListener(this);
         stethoBtn.setOnClickListener(this);
         transparentBtn.setOnClickListener(this);
@@ -69,8 +69,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         int id = v.getId();
         switch (id) {
-            case R.id.realmMainBtn:
-                toIntent(RealmMainActivity.class);
+            case R.id.testViewBtn:
+                toIntent(AutoCompleteTextViewActivity.class);
                 break;
             case R.id.surviveBtn:
                 toIntent(SurviveActivity.class);
@@ -104,5 +104,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
+
+    protected void toIntent(Class cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
+    }
+
 
 }

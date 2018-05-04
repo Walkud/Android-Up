@@ -12,7 +12,7 @@ import com.walkud.self.module.BaseActivity;
 
 import java.util.Locale;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -23,9 +23,9 @@ import butterknife.OnClick;
 
 public class I18nActivity extends BaseActivity {
 
-    @Bind(R.id.switch_language)
+    @BindView(R.id.switch_language)
     Button switchLanguage;
-    @Bind(R.id.language_text)
+    @BindView(R.id.language_text)
     TextView languageText;
 
     @Override

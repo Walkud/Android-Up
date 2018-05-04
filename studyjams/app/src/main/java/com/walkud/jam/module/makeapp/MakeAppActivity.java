@@ -11,7 +11,7 @@ import com.walkud.jam.module.makeapp.a.BuyGoodsActivity;
 import com.walkud.jam.module.makeapp.a.ObjectActivity;
 import com.walkud.jam.module.makeapp.p2.BasketBallActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -20,11 +20,11 @@ import butterknife.ButterKnife;
 public class MakeAppActivity extends BaseActivity implements View.OnClickListener {
 
 
-    @Bind(R.id.buyGoodsBtn)
+    @BindView(R.id.buyGoodsBtn)
     Button buyGoodsBtn;
-    @Bind(R.id.basketBallBtn)
+    @BindView(R.id.basketBallBtn)
     Button BasketBallBtn;
-    @Bind(R.id.objectBtn)
+    @BindView(R.id.objectBtn)
     Button objectBtn;
 
     @Override

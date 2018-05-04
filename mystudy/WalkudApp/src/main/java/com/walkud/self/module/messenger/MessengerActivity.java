@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.walkud.self.R;
 import com.walkud.self.module.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -27,9 +27,9 @@ public class MessengerActivity extends BaseActivity implements View.OnClickListe
 
     public static final int SUM_NUM = 0x001;
 
-    @Bind(R.id.sum_btn)
+    @BindView(R.id.sum_btn)
     Button sumBtn;
-    @Bind(R.id.text_view)
+    @BindView(R.id.text_view)
     TextView textView;
 
     private Messenger serviceMessenger;

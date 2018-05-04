@@ -12,7 +12,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.studyjams.s1.sj10.zhuliya.R;
 import cn.studyjams.s1.sj10.zhuliya.bean.IdiomRealm;
@@ -27,9 +27,9 @@ import io.realm.Sort;
  */
 public class HistoryRecordActivity extends BaseActivity {
 
-    @Bind(R.id.emptyRecordTV)
+    @BindView(R.id.emptyRecordTV)
     TextView emptyRecordTV;
-    @Bind(R.id.historyRecordGV)
+    @BindView(R.id.historyRecordGV)
     GridView historyRecordGV;
 
     private ActionBar actionBar;

@@ -21,7 +21,7 @@ import com.walkud.self.module.survive.service.BackgroundService;
 import com.walkud.self.module.survive.service.GrayService;
 import com.walkud.self.module.survive.service.WhiteService;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -32,17 +32,17 @@ public class SurviveActivity extends AppCompatActivity implements View.OnClickLi
      * 黑色唤醒广播的action
      */
     private final static String BLACK_WAKE_ACTION = "com.wake.black";
-    @Bind(R.id.btn_white)
+    @BindView(R.id.btn_white)
     Button btnWhite;
-    @Bind(R.id.btn_gray)
+    @BindView(R.id.btn_gray)
     Button btnGray;
-    @Bind(R.id.btn_black)
+    @BindView(R.id.btn_black)
     Button btnBlack;
-    @Bind(R.id.btn_background_service)
+    @BindView(R.id.btn_background_service)
     Button btnBackgroundService;
-    @Bind(R.id.setpText)
+    @BindView(R.id.setpText)
     TextView setpText;
-    @Bind(R.id.btn_step)
+    @BindView(R.id.btn_step)
     Button btnStep;
 
     private BinderPool mBinderPool = null;

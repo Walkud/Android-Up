@@ -10,7 +10,7 @@ import com.walkud.jam.module.BaseActivity;
 import com.walkud.jam.module.buildlayout.b.LinearLayoutActivity;
 import com.walkud.jam.module.buildlayout.b.RelativeLayoutActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -19,9 +19,9 @@ import butterknife.ButterKnife;
 public class BuildLayoutActivity extends BaseActivity implements View.OnClickListener {
 
 
-    @Bind(R.id.linearLayoutBtn)
+    @BindView(R.id.linearLayoutBtn)
     Button linearLayoutBtn;
-    @Bind(R.id.relativeLayoutBtn)
+    @BindView(R.id.relativeLayoutBtn)
     Button relativeLayoutBtn;
 
     @Override

@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.walkud.self.R;
 import com.walkud.self.module.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -24,15 +24,15 @@ public class SdkDbActivity extends BaseActivity implements View.OnClickListener 
 
     private static final String TAG = SdkDbActivity.class.getSimpleName();
 
-    @Bind(R.id.button2)
+    @BindView(R.id.button2)
     Button button2;
-    @Bind(R.id.button3)
+    @BindView(R.id.button3)
     Button button3;
-    @Bind(R.id.button4)
+    @BindView(R.id.button4)
     Button button4;
-    @Bind(R.id.button5)
+    @BindView(R.id.button5)
     Button button5;
-    @Bind(R.id.list1)
+    @BindView(R.id.list1)
     ListView list1;
 
     SdkDbHelper db;

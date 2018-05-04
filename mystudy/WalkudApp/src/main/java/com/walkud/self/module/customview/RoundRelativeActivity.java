@@ -9,7 +9,7 @@ import com.walkud.self.R;
 import com.walkud.self.module.BaseActivity;
 import com.walkud.self.view.RoundRelativeLayout;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -18,9 +18,9 @@ import butterknife.ButterKnife;
 
 public class RoundRelativeActivity extends BaseActivity {
 
-    @Bind(R.id.round_relative_layout)
+    @BindView(R.id.round_relative_layout)
     RoundRelativeLayout roundRelativeLayout;
-    @Bind(R.id.shadow_view)
+    @BindView(R.id.shadow_view)
     RoundShadowView roundShadowView;
 
     @Override

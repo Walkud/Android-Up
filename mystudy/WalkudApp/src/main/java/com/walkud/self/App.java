@@ -1,19 +1,16 @@
 package com.walkud.self;
 
-import android.app.Application;
-import android.content.Context;
-import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
-import io.realm.Realm;
 import okhttp3.OkHttpClient;
 
 /**
  * Created by jan on 16/3/30.
  */
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     private static App app;
 
@@ -23,31 +20,23 @@ public class App extends Application {
         return app;
     }
 
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this); //分包处理，解决64k问题
-    }
-
+    /**
+     * 让应用支持多DEX文件。在MultiDexApplication JavaDoc中描述了三种可选方法：
+     * 1.在AndroidManifest.xml的application中声明android.support.multidex.MultiDexApplication；
+     * 2.如果你已经有自己的Application类，让其继承MultiDexApplication；
+     * 3.如果你的Application类已经继承自其它类，你不想/能修改它，那么可以重写attachBaseContext()方法：
+     */
+//    @Override
+//    protected void attachBaseContext(Context base) {
+//        super.attachBaseContext(base);
+//        MultiDex.install(this); //分包处理，解决64k问题
+//    }
     @Override
     public void onCreate() {
         super.onCreate();
         app = this;
 
-        initRealm();
-
         initStetho();
-    }
-
-
-    /**
-     * 初始化数据库
-     */
-    private void initRealm() {
-//        RealmConfiguration config = RealmUtil.getConfig(this);
-//        Log.d("App", "RealmConfiguration info : " + config.toString());
-//        Realm.setDefaultConfiguration(config);
-        Realm.init(this);
     }
 
     /**

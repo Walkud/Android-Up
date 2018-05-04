@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.walkud.jam.R;
 import com.walkud.jam.module.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -22,27 +22,27 @@ import butterknife.ButterKnife;
  */
 public class BuyGoodsActivity extends BaseActivity implements View.OnClickListener {
 
-    @Bind(R.id.plusBtn)
+    @BindView(R.id.plusBtn)
     Button plusBtn;
-    @Bind(R.id.quantityTV)
+    @BindView(R.id.quantityTV)
     TextView quantityTV;
-    @Bind(R.id.minusBtn)
+    @BindView(R.id.minusBtn)
     Button minusBtn;
-    @Bind(R.id.priceTV)
+    @BindView(R.id.priceTV)
     TextView priceTV;
-    @Bind(R.id.thinkyouTV)
+    @BindView(R.id.thinkyouTV)
     TextView thinkyouTV;
-    @Bind(R.id.orderBtn)
+    @BindView(R.id.orderBtn)
     Button orderBtn;
-    @Bind(R.id.adidasCB)
+    @BindView(R.id.adidasCB)
     CheckBox adidasCB;
-    @Bind(R.id.nikeCB)
+    @BindView(R.id.nikeCB)
     CheckBox nikeCB;
-    @Bind(R.id.feedbackTV)
+    @BindView(R.id.feedbackTV)
     TextView feedbackTV;
-    @Bind(R.id.feedbackET)
+    @BindView(R.id.feedbackET)
     EditText feedbackET;
-    @Bind(R.id.emailToBtn)
+    @BindView(R.id.emailToBtn)
     Button emailToBtn;
 
     private static final int UNIT_PRICE = 399;//单价

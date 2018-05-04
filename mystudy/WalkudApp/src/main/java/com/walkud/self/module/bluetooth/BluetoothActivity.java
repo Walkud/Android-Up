@@ -14,7 +14,7 @@ import com.walkud.self.module.bluetooth.BluetoothHelper.BluetoothListener;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -23,13 +23,13 @@ import butterknife.ButterKnife;
  */
 public class BluetoothActivity extends BaseActivity implements View.OnClickListener, BluetoothListener {
 
-    @Bind(R.id.unbondDevices)
+    @BindView(R.id.unbondDevices)
     ListView mUnbondDevices;// 未绑定设置ListView
-    @Bind(R.id.bondDevices)
+    @BindView(R.id.bondDevices)
     ListView mBondDevices;// 已绑定设置ListView
-    @Bind(R.id.openBluetooth_tb)
+    @BindView(R.id.openBluetooth_tb)
     Button mSwitchBT;
-    @Bind(R.id.searchDevices)
+    @BindView(R.id.searchDevices)
     Button mSearchDevices;
 
     private BluetoothHelper bluetoothHelper;

@@ -14,17 +14,17 @@ import com.shizhefei.view.indicator.FixedIndicatorView;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 import com.shizhefei.view.viewpager.SViewPager;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import owncloudsms.walkudui.fragment.HomeFragment;
 import owncloudsms.walkudui.fragment.MineFragment;
 
 public class MainActivity extends BaseActivity {
 
-    @Bind(R.id.tabmain_viewPager)
+    @BindView(R.id.tabmain_viewPager)
     SViewPager viewPager;
-    @Bind(R.id.tabmain_indicator)
+    @BindView(R.id.tabmain_indicator)
     FixedIndicatorView indicator;
-    @Bind(R.id.tab_center)
+    @BindView(R.id.tab_center)
     ImageView centerImageView;
 
     IndicatorViewPager indicatorViewPager;

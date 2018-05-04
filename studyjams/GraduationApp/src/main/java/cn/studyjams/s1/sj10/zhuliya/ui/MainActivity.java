@@ -30,7 +30,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.List;
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.studyjams.s1.sj10.zhuliya.R;
 import cn.studyjams.s1.sj10.zhuliya.bean.Idiom;
@@ -45,19 +45,19 @@ import io.realm.Sort;
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.nav_view)
+    @BindView(R.id.nav_view)
     NavigationView navView;
-    @Bind(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
-    @Bind(R.id.bannerIV)
+    @BindView(R.id.bannerIV)
     ImageView bannerIV;
-    @Bind(R.id.queryIdiomET)
+    @BindView(R.id.queryIdiomET)
     EditText queryIdiomET;
-    @Bind(R.id.emptyRecordTV)
+    @BindView(R.id.emptyRecordTV)
     TextView emptyRecordTV;
-    @Bind(R.id.recordGV)
+    @BindView(R.id.recordGV)
     GridView recordGV;
 
 

@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'realm-android'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -15,9 +14,10 @@ android {
         versionName "1.0"
         flavorDimensions "default"
 
+        // add below section
         javaCompileOptions {
             annotationProcessorOptions {
-                includeCompileClasspath = true
+                includeCompileClasspath true
             }
         }
     }
@@ -45,23 +45,24 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor  'com.jakewharton:butterknife-compiler:8.8.1'
     //facebook出品的Android调试库
-    insideCompile 'com.facebook.stetho:stetho:1.3.1'
-    insideCompile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
-    onLineProvided 'com.facebook.stetho:stetho:1.3.1'
-    onLineProvided 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    insideImplementation 'com.facebook.stetho:stetho:1.3.1'
+    insideImplementation 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    onLineCompileOnly 'com.facebook.stetho:stetho:1.3.1'
+    onLineCompileOnly 'com.facebook.stetho:stetho-okhttp3:1.3.1'
     //使用javascript 控制台
-//    compile 'com.facebook.stetho:stetho-js-rhino:1.3.1'
+//    implementation 'com.facebook.stetho:stetho-js-rhino:1.3.1'
 
-    compile 'com.hhl:gridpagersnaphelper:1.0.0'
+    implementation 'com.hhl:gridpagersnaphelper:1.0.0'
     // Optional , config indicator
-    compile 'com.hhl:recyclerviewindicator:1.0.0'
+    implementation 'com.hhl:recyclerviewindicator:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
 }

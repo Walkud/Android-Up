@@ -12,9 +12,9 @@
         android:padding="5dp">
 
         <Button
-            android:id="@+id/realmMainBtn"
+            android:id="@+id/testViewBtn"
             style="@style/MainButton"
-            android:text="RealmMain" />
+            android:text="TestView" />
 
         <Button
             android:id="@+id/stethoBtn"
